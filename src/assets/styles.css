@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Primary Button: #FF3A67
+Primary Text: #212121 (Very dark gray)
+Secondary Text: #757575 (Medium gray)
+Secondary Button: #FF6F91 (A lighter, more muted version of the primary button color)
+Primary Background: #FFFFFF (White)
+Secondary Background: #F5F5F5 (Light gray)
+
+
+Dark Mode Palette
+Primary Button: #FF3A67
+Primary Text: #FFFFFF (White)
+Secondary Text: #BDBDBD (Light gray)
+Secondary Button: #FF6F91 (A lighter, more muted version of the primary button color)
+Primary Background: #212121 (Very dark gray)
+Secondary Background: #424242 (Dark gray) */
+
+:root {
+  /* Default (light mode) colors */
+  --background-color: #ffffff;
+  /* --third-backgorund-color: #007bff; */
+  --third-backgorund-color: #ff3a67;
+  --text-color: #0F0F0F;
+  --secondary-text-color: #6c757d;
+  --white-color: #fff ;
+  --active-text-color: #ff3a67;
+  --primary-border-color: #ff3a67;
+  /* --color: #0F0F0F;
+  #252525
+  #292929
+  #4B4B4B */
+  font-family: "Poppins", sans-serif;
+}
+
+[data-theme="dark"] {
+  --background-color: #0F0F0F;
+  /* --third-backgorund-color: #007bff; */ 
+  --third-backgorund-color: #252525;
+  --text-color: #ffffff;
+  --white-color: #fff ;
+  --primary-color: #1a73e8;
+  --secondary-color: #adb5bd;
+
+  font-family: "Poppins", sans-serif;
+}
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important; 
+}
+
+div:where(.swal2-container).swal2-backdrop-show, div:where(.swal2-container).swal2-noanimation {
+  background: rgba(0, 0, 0, .8) !important;
+}
+
+.error-msg{
+  color: red;
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--background-color);
+  
+  color-scheme: light dark; /* Support both color schemes */
+}
+
+a{
+  text-decoration: none;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.transition{
+  transition: 0.3s ease;
+}
+
+.container{
+  padding: 0 8%; 
+  width: calc(100% - 16%);
+}
