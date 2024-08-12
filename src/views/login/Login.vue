@@ -82,7 +82,7 @@ export default {
             } else {
                 this.v$.$reset();
                 console.log('Connects to db') ;
-                this.$router.push({ path: '/dashboard' })
+                this.$router.push({ path: '/dashboard/requests' })
             }
         }
     }
