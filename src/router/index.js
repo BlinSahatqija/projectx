@@ -37,7 +37,7 @@ const routes = [
       },
       {
         path: '',
-        redirect: 'requests', 
+        redirect: '/dashboard/requests', 
       },
     ],
   },

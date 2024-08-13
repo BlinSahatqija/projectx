@@ -35,7 +35,7 @@
             <p class="cursor-pointer text-right modal-link" @click="resetEmailModal = true">Forgot Password?</p>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
                 <router-link to="/register" class="cursor-pointer modal-link">I don't have an account</router-link>
-                <button type="submit">Login</button>
+                <button type="submit" class="btn">Login</button>
             </div> 
         </form> 
     </div>
@@ -180,29 +180,9 @@ input::placeholder {
 .modal-link:hover{
     color: #ff3a67;
 }
-
-button {
-    padding: 10px;
-    font-size: 16px;
-    width: 100px;
-    cursor: pointer;
-    background-color: #ff3a67;
-    color: rgb(255, 235, 240);
-    border: 2px solid #ff3a67; 
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
+ 
 .send-reset-link-btn{
     width: 180px;
 }
-
-button:hover {
-    background-color: rgb(255, 235, 240);
-    color: #ff3a67;
-}
-
-[data-theme="dark"] button:hover  {
-    background-color: var(--background-color);
-    }
+ 
 </style>

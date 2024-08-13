@@ -1,4 +1,5 @@
 <template>
+    <Signature v-if="hasSignature"/>
 <div style="display: flex;">
     <div :class="['dashboard-menu-wrapper', { 'menu-wrapper-closed': isMenuClosed }]">
         <h1 class="logo">X</h1>
@@ -45,14 +46,18 @@
   
 <script>
 import DarkModeToggle from '@/components/DarkModeToggle.vue';
+import Signature from '@/components/Signature.vue';
 
 export default {
     components: {
         DarkModeToggle,
+        Signature
     },
     data() {
         return {
             isMenuClosed: false,
+
+            hasSignature: true,
         };
     },
     methods: {
