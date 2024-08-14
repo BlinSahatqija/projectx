@@ -1,5 +1,5 @@
 <template>
-    <Signature v-if="hasSignature"/>
+    <Signature v-if="hasSignature" @close="hasSignature = false"/>
 <div style="display: flex;">
     <div :class="['dashboard-menu-wrapper', { 'menu-wrapper-closed': isMenuClosed }]">
         <h1 class="logo">X</h1>
