@@ -244,6 +244,7 @@ export default {
     width: 100vw;
     height: 100vh;
     position: fixed;
+    z-index: 15;
 }
 
 .signature-wrapper{
