@@ -70,10 +70,16 @@ export default {
     .subscription-title-wrapper,
     .subscription-about-wrapper,
     .subscription-info-wrapper{
-        border: 1px solid black;
+        /* border:2px solid var(--primary-border-color); */
         border-radius: 25px;
         padding: 25px;
         width: 100%;
+        box-shadow: 0 5px 10px rgba(30, 32, 37, .3);
+        background-color: white;
+    }
+
+    .subscription-info-wrapper{
+        box-shadow: none;
     }
 
 
@@ -145,7 +151,7 @@ export default {
     }
 
     .subscription-info{
-        border: 1px solid black;
+        border: 2px solid var(--primary-border-color);
         border-radius: 25px;
         padding: 25px;
         width: 48%;
@@ -181,7 +187,8 @@ export default {
     }
 
     [data-theme="dark"] .subscription-title-wrapper,
-    [data-theme="dark"] .subscription-about-wrapper   {
+    [data-theme="dark"] .subscription-about-wrapper,
+    [data-theme="dark"] .subscription-info-wrapper{
         background-color: #212529 !important;
         border: none !important;
     }

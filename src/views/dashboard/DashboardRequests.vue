@@ -89,15 +89,23 @@ export default {
     height: 97%;
     padding: 25px;
     border-radius: 20px;
-    background-color: var(--background-color);
-    box-shadow: 0 1px 2px rgba(56, 65, 74, .5);
-    box-shadow: 0 5px 10px rgba(30, 32, 37, .8);
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .3);
     transition: 0.3s ease;
     overflow: auto;
 }
 
+
+[data-theme="dark"] .dashboard-card {
+    background-color: #212529 !important;
+}
+
+[data-theme="dark"] .card-value{
+    border-color: var(--primary-border-color);
+}
+
 .dashboard-card:hover {
-    margin-bottom: 3%;
+    box-shadow: none;
 }
 
 .dashborad-cards>.dashboard-card-wrapper:nth-last-child(-n+2) {

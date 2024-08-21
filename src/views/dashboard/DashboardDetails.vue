@@ -1,6 +1,5 @@
 <template>
-<div>
-    <h1>Details Table</h1>
+<div> 
 
     <div class="table">
         <div class="table-header">
@@ -371,6 +370,16 @@ export default {
     margin-bottom: 10px;
 }
 
+[data-theme="dark"] .table-header,
+[data-theme="dark"] .table-body{
+    background-color: #212529 !important;
+}
+
+[data-theme="dark"] .card-value{
+    border-color: var(--primary-border-color);;
+}
+
+
 .table-header p{
     font-size: 18px;
 }
@@ -389,8 +398,25 @@ export default {
   width: 14% !important;
   border-radius: 10px;
 }
- 
- 
+
+[data-theme="dark"] .dropdown-menu,
+[data-theme="dark"] .action-body {
+    background-color: #1A1D21 !important;
+}
+
+[data-theme="dark"] .action-body img{
+    filter: brightness(0) invert(1);
+}
+[data-theme="dark"] .action-body:hover img,
+[data-theme="dark"] .arrow-body img,
+.dropdown-button:hover .dropdown-icon
+    {
+        filter: brightness(0) saturate(100%) invert(44%) sepia(69%) saturate(5587%) hue-rotate(327deg) brightness(107%) contrast(101%);
+    }
+
+    .dropdown-button:hover p{
+        color: #ff3a67 !important;
+    }
 
 .dropdown-button{
     display: flex;

@@ -164,16 +164,17 @@ export default {
 }
 
 
-.dashboard-menu-link:hover p{
+.dashboard-menu-link:hover p,
+.router-link-exact-active p{
         color: #ff3a67 !important; 
     }
 
-    .dashboard-menu-link:hover .menu-link-icon{
+    .dashboard-menu-link:hover .menu-link-icon,
+    .router-link-exact-active .menu-link-icon{
         filter: brightness(0) saturate(100%) invert(44%) sepia(69%) saturate(5587%) hue-rotate(327deg) brightness(107%) contrast(101%);
     }
 
-
-
+ 
 
 .icon:hover {
     width: 38px;
