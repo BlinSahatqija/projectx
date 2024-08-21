@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Dashboard from '@/views/dashboard/Dashboard.vue';
 import RequestCards from '@/views/dashboard/DashboardRequests.vue';
 import DetailsView from '@/views/dashboard/DashboardDetails.vue';
+import Subscription from '@/views/dashboard/Subscription.vue';
 import Login from '../views/login/Login.vue';
 import Register from '../views/login/Register.vue';
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
       {
         path: 'details',
         component: DetailsView,
+      },
+      {
+        path: 'subscription',
+        component: Subscription,
       },
       {
         path: '',

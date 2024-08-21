@@ -5,11 +5,11 @@
     <div class="table">
         <div class="table-header">
             <div class="arrow-header"></div>
-            <div class="company-header">Company</div>
-            <div class="issue-header">Issue</div>
-            <div class="risk-header">Risk</div>
-            <div class="requests-header">Requests sent</div>
-            <div class="status-header">Status</div>
+            <div class="company-header"><p>Company</p></div>
+            <div class="issue-header"><p>Issue</p></div>
+            <div class="risk-header"><p>Risk</p></div>
+            <div class="requests-header"><p>Requests sent</p></div>
+            <div class="status-header"><p>Status</p></div>
             <div class="action-header"></div>
         </div>
         <div class="table-body-wrapper">
@@ -18,11 +18,11 @@
                     <div class="arrow-body" @click="toggleInfo(index)">
                         <img src="../../assets/icons/arrow-down.svg" alt="arrow down">
                     </div>
-                    <div class="company-body">{{ detail.company.name }}</div>
-                    <div class="issue-body">{{ detail.issue.type }}</div>
-                    <div class="risk-body">{{ detail.risk.name }}</div>
-                    <div class="requests-body">{{ detail.requests }}</div>
-                    <div class="status-body">{{ detail.status.type }}</div>
+                    <div class="company-body"><p>{{ detail.company.name }}</p></div>
+                    <div class="issue-body"><p>{{ detail.issue.type }}</p></div>
+                    <div class="risk-body"><p>{{ detail.risk.name }}</p></div>
+                    <div class="requests-body"><p>{{ detail.requests }}</p></div>
+                    <div class="status-body"><p>{{ detail.status.type }}</p></div>
                     <div class="action-body" @click="toggleDropdown(index)">
                         <img src="../../assets/icons/three-dots-vertical.svg">
                         <div v-if="dropdownVisible[index]" class="dropdown-menu">
@@ -371,9 +371,12 @@ export default {
     margin-bottom: 10px;
 }
 
-.table-body{
+.table-header p{
+    font-size: 18px;
+}
 
-
+.table-body p{
+    font-size: 16px; 
 }
 
 .dropdown-menu {
@@ -461,6 +464,211 @@ export default {
     width: 23% !important; 
 }
 
+[data-theme="dark"] .dropdown-icon {
+    filter: brightness(0) invert(1);
+}
 
+ /* 2304-1440 */
+ @media (min-width: 2304px){
+    .table {
+        width: 92%;
+    }
+
+    .table-header, .table-body {
+        display: flex;
+        padding: 16px 14px;
+    }
+
+    .table-header p  {
+        font-size: 24px;
+    }
+
+    .table-body p  {
+        font-size: 20px;
+    }
+
+    .dropdown-menu  {
+        position: absolute;
+        margin-top: 170px;
+    }
+    
+    .dropdown-button-edit  {
+        margin-bottom: 16px;
+    }
+    
+    .dropdown-button  { 
+        gap: 18px; 
+    }
+
+    .dropdown-icon  {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+
+/*2560-1440*/
+@media (min-width: 2560px) {
+     
+}
+
+
+/*2573-1206*/
+@media(min-width: 2573px){
+
+}
+
+
+/*3200-1800*/
+@media(min-width: 3200px){
+    
+}
+
+/*3360-1890 1695*/
+@media(min-width:3360px){
+}
+
+/*1680-1080*/ 
+@media(max-width: 1680px){
+
+}
+
+/*1640-1080*/
+@media(max-width: 1640px){
+
+}
+
+
+/* 1600 - 757 */
+@media (max-width: 1600px) {
+
+}
+
+/*1536-864*/
+@media(max-width:1536px){ 
+
+}
+
+/* 1440-990 */
+@media(max-width:1440px){  
+
+}
+
+/*1366-768*/
+@media (max-width:1366px){
+
+}
+
+/* 1280-800 */
+@media (max-width:1280px){
+
+}
+
+/*1134x712*/
+@media(max-width:1134px){
+
+}
+
+/*1024-768*/
+@media (max-width:1024px){  
+   
+}
+
+
+/* 962x601 */
+@media(max-width: 962px){
+
+}
+
+/*834-1112*/
+@media(max-width: 834px){   
+    
+}
+
+
+/* 810x1080 */
+@media(max-width: 810px){
+
+}
+
+/* 800x1280 */
+@media(max-width: 800px){
+
+}
+
+/*778-304*/
+@media(max-width: 778px){
+
+}
+
+
+/* 768x1024 */
+@media(max-width: 768px){
+
+}
+
+/*712-1138*/
+@media(max-width:712px){
+
+}
+
+
+/* 601x962 */
+@media(max-width:601px){ 
+
+    
+}
+
+/* 577-951 */
+@media(max-width:577px){
+
+}
+
+/* 540-960 */
+@media(max-width:540px){
+    
+}
+
+/*480-800*/
+@media (max-width:480px) {
+
+}
+
+/*425-*/
+@media(max-width:425px){
+
+}
+
+/*414-736 617   */
+@media (max-width:414px) {
+
+}
+
+/*390 x 844*/
+@media(max-width:390px){
+
+}
+
+
+/*384-640*/
+@media(max-width:384px){
+
+}
+
+/*375*/
+@media(max-width:375px){
+
+}
+
+
+/*360x640*/
+@media(max-width:360px){
+
+}
+
+/*320x568*/
+@media(max-width:320px){ 
+
+}
   
 </style>
