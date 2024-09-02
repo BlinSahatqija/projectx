@@ -74,7 +74,7 @@
     </div>
 
 </div>
-<div class="plans container">
+<div class="plans container" id="plansContainer">
     <div class="individual-plan plan">
         <h3 class="plan-title">Solo Plan</h3>
         <div class="plan-prices">

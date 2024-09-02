@@ -4,6 +4,10 @@
 
 }
 
+.swal2-confirm{
+  background-color: #28A745 !important;
+}
+
 /* Primary Button: #FF3A67
 Primary Text: #212121 (Very dark gray)
 Secondary Text: #757575 (Medium gray)
@@ -30,6 +34,11 @@ Secondary Background: #424242 (Dark gray) */
   --white-color: #fff ;
   --active-text-color: #ff3a67;
   --primary-border-color: #ff3a67;
+
+  --dashboard-header-bg: #ffffff;
+  --dashboard-side-bg: #212529;
+  --dashboard-component-bg: #ffffff;
+  --dashboard-main-bg: #F3F3F9;
   /* --color: #0F0F0F;
   #252525
   #292929
@@ -47,6 +56,11 @@ Secondary Background: #424242 (Dark gray) */
   --secondary-color: #adb5bd;
 
   font-family: "Poppins", sans-serif;
+
+  --dashboard-header-bg: #292E32;
+  --dashboard-side-bg: #212529;
+  --dashboard-component-bg: #212529;
+  --dashboard-main-bg: #1A1D21;
 }
 
 div:where(.swal2-container) div:where(.swal2-popup) {

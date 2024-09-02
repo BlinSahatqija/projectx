@@ -6,7 +6,9 @@
                     <h1>Plan and Billing</h1>
                     <p>Manage your plan and payments</p>
                 </div>    
-                <div class="cancel-subscription subscription-btn-wrapper">
+                <div class="cancel-subscription subscription-btn-wrapper"
+                    @click="cancelSub"
+                >
                     <a>Cancel subscription</a>
                 </div>
             </div>
@@ -16,7 +18,8 @@
                     <h1 class="subscription-about-title">Current plan</h1>
 
                     <div v-if="!showMobile" class="change-subscription subscription-btn-wrapper">
-                        <a>Change subscription</a>
+                        
+                        <router-link target="_blank" to="/#plansContainer">Change subscription</router-link>
                     </div>
                 </div>    
                 <div class="subscription-info-wrapper">
@@ -42,12 +45,25 @@
     </div>
 </template>
 <script>
+import Swal from 'sweetalert2';
 export default {
     data(){
         return{
             isSubcribed: true,
 
             showMobile: false,
+        }
+    },
+
+    methods:{
+        cancelSub(){
+            Swal.fire({
+                title: 'Are you sure?',
+                    text: '',
+                    icon: 'question', 
+                    showCancelButton: true,
+                    confirmButtonText: "Yes",
+                })
         }
     },
 
