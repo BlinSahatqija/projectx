@@ -1,6 +1,6 @@
 <template>
-<div>
 
+<div class="table-wrapper" style="width: 100%; overflow: auto;">
     <div class="table">
         <div class="table-header">
             <div class="arrow-header"></div>
@@ -846,7 +846,23 @@ export default {
 }
 
 /*834-1112*/
-@media(max-width: 834px) {}
+@media(max-width: 834px) {
+    .table{
+        width: 850px;
+        margin: 40px;
+    }
+
+    .dropdown-menu { 
+        margin-top: 135px;
+        margin-right: 100px;   
+        width: 18% !important; 
+    }
+
+    .risk-img {
+        height: 22px !important;
+        width: 22px !important;
+    }
+}
 
 /* 810x1080 */
 @media(max-width: 810px) {}
@@ -863,6 +879,13 @@ export default {
 
 /*712-1138*/
 @media(max-width:712px) {
+    .table {
+        margin: 35px 25px;
+    }
+
+    .table-body p, .table-body-details p {
+        font-size: 14px;
+    }
 }
 
 /* 601x962 */

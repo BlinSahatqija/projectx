@@ -220,38 +220,7 @@ export default {
 
 
 
-/* 1600 - 757 */
-@media (min-width: 1600px) {
-    .subscription-title h1  {
-        font-size: 44px;
-        margin-bottom: 14px;
-    }
 
-    .subscription-title p  {
-        font-size: 20px;
-    }
-
-    .subscription-btn-wrapper a  {
-        font-size: 16px;
-    }
-
-    .subscription-about-title  {
-        font-size: 38px;
-    }
-
-    .subscription-plan-type , .subscription-expires-title  {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .subscription-plan-price , .subscription-expires-date  {
-        font-size: 28px; 
-    }
-
-    .subscription-status  {
-        font-size: 16px;
-    }
-}
 
 /*1640-1080*/
 @media(min-width: 1640px){
@@ -499,10 +468,40 @@ export default {
 }
 
 
+/* 1600 - 757 */
+@media (min-width: 1600px) {
+    .subscription-title h1  {
+        font-size: 44px;
+        margin-bottom: 14px;
+    }
 
+    .subscription-title p  {
+        font-size: 20px;
+    }
+
+    .subscription-btn-wrapper a  {
+        font-size: 16px;
+    }
+
+    .subscription-about-title  {
+        font-size: 38px;
+    }
+
+    .subscription-plan-type , .subscription-expires-title  {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .subscription-plan-price , .subscription-expires-date  {
+        font-size: 28px; 
+    }
+
+    .subscription-status  {
+        font-size: 16px;
+    }
+}
 
 /* laptop is 1536*/
-
 /*1536-864*/
 @media(max-width:1536px){ 
 
