@@ -313,6 +313,10 @@ export default {
     border-radius: 40px;
 }
 
+[data-theme="dark"] .bg{
+    background-color: var(--dashboard-header-bg);
+}
+
 .statistics{
     color: var(--white-color);
 }
@@ -357,7 +361,7 @@ export default {
     border: 1px solid black;
     padding: 40px 40px;
     width: calc(49% - 80px);
-    background-color: var(--background-color);
+    background-color: var(--body-background-color);
     border-radius: 40px;
     position: relative
 }
@@ -542,7 +546,7 @@ export default {
 .answ{
   border: none;
   position: relative;
-  background-color: var(--background-color);
+  background-color: var(--body-background-color);
   border-radius: 10px;
   height: 0; 
   overflow: hidden;
