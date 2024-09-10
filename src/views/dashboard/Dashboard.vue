@@ -96,7 +96,7 @@ export default {
         return {
             isMenuClosed: false,
 
-            hasSignature: false,
+            hasSignature: true,
         };
     },
     methods: {

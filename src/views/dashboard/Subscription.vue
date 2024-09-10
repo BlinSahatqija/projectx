@@ -157,6 +157,10 @@ export default {
         border: 1px solid black; 
     }
 
+    .change-subscription a{ 
+        color: var(--text-color) !important;
+    }
+
     .subscription-info-wrapper{
         border: none;
         display: flex;

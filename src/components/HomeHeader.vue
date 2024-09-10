@@ -82,7 +82,7 @@
         return {
         activeLink: '',
         mobile: false,
-        isMenuClosed: false,
+        isMenuClosed: true,
         };
     },
     mounted(){

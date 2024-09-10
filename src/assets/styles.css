@@ -75,7 +75,7 @@ div:where(.swal2-container).swal2-backdrop-show, div:where(.swal2-container).swa
 }
 
 .error-msg{
-  color: red;
+  color: red !important;
   font-size: 14px;
 }
 

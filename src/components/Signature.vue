@@ -239,6 +239,8 @@ export default {
     color: var(--text-color);
 }
 
+
+
 .signature-backdrop{
     background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
@@ -253,7 +255,7 @@ export default {
     position: absolute;
     top: 50%;  
     left: 50%;  
-    background-color: var(--background-color);
+    background-color: var(--body-background-color);
     transform: translate(-50%, -50%); 
     border-radius: 20px;
     padding: 30px;
@@ -339,7 +341,8 @@ form {
     border: 1px solid black;
     border-radius: 10px;
     width: 100% !important;
-    height: 75% !important; 
+    /* height: 75% !important;  */
+    height: 350px !important;
 }
 
 [data-theme="dark"]  .signature-box{ 
@@ -432,8 +435,396 @@ form {
 
 
 .form-buttons{ 
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
 }
 
+.btn{
+    width: 130px;
+}
+
+
+
+/*1640-1080*/
+@media(min-width: 1640px) {
+    .signature-title h1 {
+        font-size: 30px;
+    }
+    .signature-terms p {
+        font-size: 16px;
+    }
+    .signature-label {
+        font-size: 18px;
+    }
+
+    .small-btn { 
+        width: 90px;
+    }
+}
+
+/*1680-1080*/
+@media(min-width: 1680px) {}
+
+/* 1920-1080 */
+@media (min-width: 1920px) {
+    .signature-title h1 {
+        font-size: 34px;
+    }
+    .signature-content { 
+        margin: 35px 0;
+    }
+    .signature-terms p {
+        font-size: 18px;
+    }
+
+    .signature-label {
+        font-size: 22px;
+    }
+
+
+    .small-btn {
+        width: 120px;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .btn {
+        width: 180px;
+        font-size: 18px;
+    }
+
+    .close-modal-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* 2304-1440 */
+@media (min-width: 2304px) {
+    .signature-title h1 {
+        font-size: 36px;
+    }
+ 
+    .signature-terms p {
+        font-size: 20px;
+    }
+
+    .signature-label {
+        font-size: 24px;
+    }
+
+
+    .small-btn {
+        width: 150px;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .btn {
+        width: 220px;
+        font-size: 18px;
+    }
+
+    .close-modal-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .img-upload-btn {
+        height: 150px;
+    }
+    .img-upload-btn p {
+        font-size: 16px;
+    }
+}
+
+/*2560-1440*/
+@media (min-width: 2560px) {}
+
+/*2573-1206*/
+@media(min-width: 2573px) {
+    .signature-title h1 {
+        font-size: 38px;
+    }
+ 
+    .signature-terms p {
+        font-size: 22px;
+    }
+
+    .signature-label {
+        font-size: 26px;
+    }
+
+
+    .small-btn {
+        width: 160px;
+    }
+
+    .signature-box {
+        height: 400px !important;
+    }
+
+    .btn {
+        width: 240px;
+        font-size: 20px;
+    }
+
+    .close-modal-btn {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/*3200-1800*/
+@media(min-width: 3200px) {
+    .signature-wrapper {
+        padding: 40px;
+    }
+
+    .signature-title h1 {
+        font-size: 46px;
+    }
+
+    .signature-terms p {
+        font-size: 26px;
+    }
+
+    .signature-label {
+        font-size: 32px;
+    }
+
+    .signature-box {
+        height: 550px !important;
+    }
+
+    .small-btn {
+        width: 200px;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .form-buttons {
+        margin-top: 40px;
+    }
+
+    .btn {
+        width: 300px;
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .img-upload-btn {
+        height: 180px;
+    }
+    .img-upload-btn p {
+        font-size: 20px;
+    }
+
+    .close-modal-btn {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/*3360-1890 1695*/
+@media(min-width:3360px) {
+}
+
+ 
+/*my big monitor 1600 - 757 */
+@media (max-width: 1600px) {}
+
+/*my small monitor 1536-864*/
+@media(max-width:1536px) {}
+
+/* 1440-990 */
+@media(max-width:1440px) {
+    .signature-box { 
+        height: 300px !important;
+    }
+}
+
+/*1366-768*/
+@media (max-width:1366px) {}
+
+/* 1280-800 */
+@media (max-width:1280px) {
+}
+
+/*1134x712*/
+@media(max-width:1134px) {
+    .signature-wrapper {
+        width: 90vw;
+    }
+    .signature-title h1 {
+        font-size: 26px;
+    }
+    .signature-terms { 
+        height: 450px;
+        overflow: auto;
+    }
+}
+
+/*1024-768*/
+@media (max-width:1024px) {}
+
+/* 962x601 */
+@media(max-width: 962px) {
+    .image-upload-wrapper {
+        justify-content: center;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .img-upload-btn {
+        height: 100px;
+    }
+}
+
+/*834-1112*/
+@media(max-width: 834px) {
+    .signature-content {
+        flex-direction: column;
+    }
+
+    .signature-terms {
+        height: 200px;
+        width: 100%;
+        margin-bottom: 50px;    
+    }
+
+    .signature-form{
+        width: 100%;
+    }
+
+    .signature-box {
+        height: 250px !important;
+    }
+
+    .signature-label{
+        margin-bottom: 20px;
+    }
+
+    .image-upload-wrapper {
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .img-upload-btn {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* 810x1080 */
+@media(max-width: 810px) {}
+
+/* 800x1280 */
+@media(max-width: 800px) {}
+
+/*778-304*/
+@media(max-width: 778px) {}
+
+/* 768x1024 */
+@media(max-width: 768px) {
+    .signature-title h1 {
+        font-size: 24px;
+    }
+}
+
+/*712-1138*/
+@media(max-width:712px) {
+}
+
+/* 601x962 */
+@media(max-width:601px) {}
+
+/* 577-951 */
+@media(max-width:577px) {}
+
+/* 540-960 */
+@media(max-width:540px) {
+    .btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .img-upload-btn p {
+        font-size: 12px;
+    }
+}
+
+/*480-800*/
+@media (max-width:480px) {}
+
+/*425-*/
+@media(max-width:425px) {
+    .signature-title h1 {
+        font-size: 20px;
+    }
+
+    .signature-terms {
+        height: 150px;
+    }
+
+    .signature-terms p {
+        font-size: 12px; 
+    }
+
+    .signature-box {
+        height: 200px !important;
+    }    
+    
+    .img-upload-btn {
+        width: 100%
+    }
+}
+
+/*414-736 617   */
+@media (max-width:414px) {
+}
+
+/*390 x 844*/
+@media(max-width:390px) {
+    .signature-wrapper {
+        padding: 20px;
+    }
+
+    .signature-label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+/*384-640*/
+@media(max-width:384px) {
+    .signature-title h1 {
+        font-size: 18px;
+    }
+}
+
+/*375*/
+@media(max-width:375px) {
+
+}
+
+/*360x640*/
+@media(max-width:360px) {
+    .signature-box {
+        height: 180px !important;
+    }
+}
+
+/*320x568*/
+@media(max-width:320px) {
+    .btn {
+        width: 110px;
+    }
+}
 </style>
