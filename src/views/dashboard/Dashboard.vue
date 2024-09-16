@@ -71,11 +71,30 @@
             </div>
             <div class="dashboard-header-links">
                 <DarkModeToggle />
-                <div class="icon-wrapper">
-                    <div class="user-icon icon">
-                        <img src="../../assets/icons/user-icon.svg">
+                <div class="user-menu-dropdown-wrapper">
+                    <div class="icon-wrapper" @click="showUserDropdown = !showUserDropdown">
+                        <div class="user-icon icon">
+                            <img src="../../assets/icons/user-icon.svg">
+                        </div>
                     </div>
-                </div>
+
+                    <div v-if="showUserDropdown"  ref="dropdown">
+                        <div class="user-menu-dropdown">
+                            <router-link to="/dashboard/profile" class="user-menu-item"  @click="showUserDropdown = false">
+                                <div class="user-menu-item-icon">
+                                    <img src="../../assets/icons/user-icon.svg">
+                                </div>
+                                <p>Profile</p>
+                            </router-link>
+                            <router-link to="/" class="user-menu-item"   @click="showUserDropdown = false">
+                                <div class="user-menu-item-icon">
+                                    <img src="../../assets/icons/log-out-icon.svg">
+                                </div> 
+                                <p>Log Out</p>
+                            </router-link> 
+                        </div>
+                    </div>
+                </div> 
             </div>
         </header>
         <router-view />
@@ -95,20 +114,37 @@ export default {
     data() {
         return {
             isMenuClosed: false,
-
-            hasSignature: true,
+            showUserDropdown: false,
+            hasSignature: false,
         };
     },
     methods: {
         toggleMenu() {
             this.isMenuClosed = !this.isMenuClosed;
         },
+
+
+        // handleClickOutside(event) {
+        //     console.log('inside')
+        //     console.log(this.showUserDropdown)
+        //     if (!this.$refs.dropdown.contains(event.target)) {
+        //         this.showUserDropdown = false;
+        //     }else{
+        //         this.showUserDropdown = true;
+        //     }
+        //     console.log(this.showUserDropdown)
+        // },
     },
     mounted() {
         if (window.innerWidth < 770) {
             this.isMenuClosed = true;
         }
-    }
+
+        // document.addEventListener('click', this.handleClickOutside);
+    } ,
+    beforeUnmount() {
+        // document.removeEventListener('click', this.handleClickOutside);
+    },
 };
 </script>
 
@@ -271,7 +307,60 @@ header {
     display: none;
 }
 
+.user-menu-dropdown{
+    position: absolute;
+    width: 160px;
+    right: 10px;
+    transform: translateX(-10px);
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .3);
+    padding: 10px 0;
+    border-radius: 10px;
+    z-index: 4;
+}
 
+[data-theme="dark"]
+.user-menu-dropdown{
+    background-color: #212529;
+}
+
+.user-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px ;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.user-menu-item:hover{
+    background-color: #2125292e;
+}
+
+[data-theme="dark"] .user-menu-item:hover{
+    background-color: #9b9d9f2e;
+}
+
+.user-menu-item:first-child{
+    margin-bottom: 10px;
+}
+
+.user-menu-item p{
+    font-size: 16px;
+}
+
+.user-menu-item-icon{
+    width: 22px;
+    height: 22px;
+}
+
+.user-menu-item-icon img{
+    width: 100%;
+}
+
+[data-theme="dark"] .user-menu-item-icon img{
+    filter: brightness(0) invert(1);
+}
 
 /*1680-1080*/
 @media(min-width: 1680px) {}

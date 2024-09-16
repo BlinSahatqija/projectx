@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Dashboard from '@/views/dashboard/Dashboard.vue';
+import Profile from '@/views/dashboard/Profile.vue';
 import RequestCards from '@/views/dashboard/DashboardRequests.vue';
 import DetailsView from '@/views/dashboard/DashboardDetails.vue';
 import Subscription from '@/views/dashboard/Subscription.vue';
@@ -39,6 +40,10 @@ const routes = [
       {
         path: 'subscription',
         component: Subscription,
+      },
+      {
+        path: 'profile',
+        component: Profile,
       },
       {
         path: '',

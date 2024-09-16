@@ -64,7 +64,7 @@
                         <div class="input-wrapper">
                             <label>Country</label>
                             <select name="country" id="country" v-model="registerPage2.country" class="select-input">
-                            <option value="">Select</option>
+                                <option value="">Select</option>
                                 <option v-for="country in countriesList" :key="country.id" :value="country.name">
                                     {{ country.name }}
                                 </option>
