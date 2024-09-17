@@ -77,7 +77,7 @@
                 </div>
 
 
-                <div class="edit-user-row last-element">
+                <div class="edit-user-row">
                     <div class="edit-user-element">
                         <label class="edit-user-label">Number</label>
                         <input type="text" class="edit-user-input last-element" placeholder="Number">
@@ -86,6 +86,12 @@
                     <div class="edit-user-element ">
                         <label class="edit-user-label">Email</label>
                         <input type="email" class="edit-user-input last-element" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="edit-user-row last-element">
+                    <div class="save-changes-btn">
+                        <p>Save Changes</p>
                     </div>
                 </div>
                 
@@ -189,7 +195,7 @@ export default {
 
     .profile-menu-item:hover,
     .profile-menu-item-active{
-        border-bottom-color: white;
+        border-bottom-color: var(--text-color);
     }
 
 
@@ -236,7 +242,7 @@ export default {
         position: absolute;
         top: 0;
         right: 0;
-        border: 1px solid white;
+        border: 1px solid var(--text-color); 
         padding: 10px;
         border-radius: 5px;
         transition: 0.3s ease;
@@ -249,7 +255,7 @@ export default {
     }
 
     .last-element{
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
 
@@ -304,7 +310,24 @@ export default {
         width: 100%;
     }
 
-    /*1640-1080*/
+ 
+
+    .save-changes-btn{
+        border: 1px solid var(--text-color); 
+        margin-top: 30px;
+        width: 180px;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .save-changes-btn p{
+        font-size: 16px;
+    }
+ 
+/*1640-1080*/
 @media(min-width: 1640px) {}
 
 /*1680-1080*/
@@ -347,6 +370,14 @@ export default {
         margin-top: 40px;
         padding: 10px;
         font-size: 16px;
+    }
+    
+    .save-changes-btn {
+        width: 200px;
+    }
+
+    .save-changes-btn p {
+        font-size: 18px;
     }
 }
 
@@ -395,6 +426,14 @@ export default {
         font-size: 20px;
     }
 
+    .save-changes-btn {
+        width: 220px;
+    }
+
+    .save-changes-btn p {
+        font-size: 20px;
+    }
+
 
     .password-modal {
         padding: 75px;
@@ -433,6 +472,15 @@ export default {
     }
 
     .change-password-btn p {
+        font-size: 22px;
+    }
+
+    .save-changes-btn {
+        width: 250px;
+        padding: 12px 0;
+    }
+
+    .save-changes-btn p {
         font-size: 22px;
     }
 
@@ -484,6 +532,15 @@ export default {
     }
 
     .change-password-btn p {
+        font-size: 26px;
+    }
+
+    .save-changes-btn {
+        width: 300px;
+        padding: 14px 0;
+    }
+
+    .save-changes-btn p {
         font-size: 26px;
     }
 
@@ -564,6 +621,11 @@ export default {
     .edit-user-row {
         margin-bottom: 15px;
     }
+ 
+
+    .save-changes-btn p {
+        font-size: 14px;
+    }
 
     .password-modal {
         padding: 40px;
@@ -582,7 +644,13 @@ export default {
 }
 
 /*834-1112*/
-@media(max-width: 834px) {}
+@media(max-width: 834px) {
+    .edit-user-row { 
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
 
 /* 810x1080 */
 @media(max-width: 810px) {}
@@ -599,29 +667,114 @@ export default {
 
 /*712-1138*/
 @media(max-width:712px) {
+    .edit-user-element {
+        width: 400px;
+    }
 }
 
 /* 601x962 */
-@media(max-width:601px) {}
+@media(max-width:601px) {
+    .edit-user-element {
+        width: 320px;
+    }
+}
 
 /* 577-951 */
 @media(max-width:577px) {}
 
 /* 540-960 */
-@media(max-width:540px) {}
+@media(max-width:540px) {
+    .profile-menu {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .profile-menu-item p {
+        font-size: 14px;
+    }
+
+    .details{
+        padding-top: 60px;
+    }
+    
+    .edit-user-row{ 
+        width: 100%;
+    }
+
+    .edit-user-element {
+        width: 100%;
+    }
+
+    .change-password-btn{
+        width: 140px;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .save-changes-btn{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 220px;
+    }
+
+    .password-modal { 
+        width: 400px;
+        padding: 35px 25px;
+    }
+}
 
 /*480-800*/
-@media (max-width:480px) {}
+@media (max-width:480px) {
+    .details{
+        padding-bottom: 0;
+    }
+}
 
 /*425-*/
-@media(max-width:425px) {}
+@media(max-width:425px) {
+    .profile-wrapper {
+        padding: 20px 14px;
+    }
+
+    .edit-user-label, .edit-user-input {
+        font-size: 12px;
+    }
+
+    .save-changes-btn { 
+        width: 200px;
+    }
+
+    .save-changes-btn p {
+        font-size: 12px;
+    }
+
+    .password-modal { 
+        width: 380px;
+        padding: 30px 20px;
+    }
+
+    .password-modal .edit-user-element{
+        margin-top: 20px;
+    }
+
+    .reset-password-btn { 
+        font-size: 12px;
+    }
+}
 
 /*414-736 617   */
-@media (max-width:414px) {
+@media (max-width:414px) { 
+   .change-password-btn p {
+        font-size: 11px;
+    }
 }
 
 /*390 x 844*/
 @media(max-width:390px) {
+    .password-modal {
+        width: 340px; 
+    }
 }
 
 /*384-640*/
@@ -630,14 +783,26 @@ export default {
 
 /*375*/
 @media(max-width:375px) {
-
+    .save-changes-btn {
+        width: 180px;
+    }
 }
 
 /*360x640*/
 @media(max-width:360px) {
+    .change-password-btn{
+        width: 125px; 
+    }
+
+    .password-modal {
+        width: 320px; 
+    }
 }
 
 /*320x568*/
 @media(max-width:320px) {
+    .password-modal {
+        width: 300px; 
+    }
 }
 </style>
