@@ -75,7 +75,54 @@
                     </div>
                 </div>
                 <div v-if="infoVisible[index]" class="table-body-details">
-                    <p>{{ detail.info }}</p>
+                    <!-- <p>{{ detail.info }}</p> -->
+                    <div class="detail-element">
+                        <p class="detail-element-tile">Anforderungsstatus</p>
+                        
+                        <p class="detail-element-info">Sie wurden zur Sperrliste des Datenbrokers hinzugefügt. Dies bedeutet, dass dieser keine Informationen über Sie mehr sammelt, weitergibt oder speichert.</p>
+                    </div> 
+                     
+                    <div class="detail-element"> 
+                        <p class="detail-element-tile">Allgemeine Statistiken</p>
+
+                        <div class="detail-flex-wrapper">
+                            <div>
+                                <p class="detail-element-info">Letzte Anfrage gesendet </p>
+                                <p class="detail-element-info">26. November 2023</p>
+                            </div>
+
+                            <div>
+                                <p class="detail-element-info">Letzte Anfrage abgeschlossen </p>
+                                <p class="detail-element-info">27. November 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div class="detail-element">
+                        <p class="detail-element-tile">Über Bookyourdata </p>
+
+                        <p class="detail-element-info">Verkauft verifizierte und zielgerichtete Business-to-Business-E-Mail-Listen von Personen in den USA, Großbritannien, Kanada, Europa und Asien, die auf die Bedürfnisse der Kunden zugeschnitten sind. Die Daten umfassen E-Mail-Adressen, Telefonnummern, Postanschriften, Berufsbezeichnung, Abteilung, Branche und mehr.</p>
+                    </div> 
+                   
+                    <div class="detail-element">
+                        <p class="detail-element-tile">Verbundene Risiken </p>
+                        
+                        <div class="detail-flex-wrapper info-tags-wrapper">
+                            <div>
+                                <p class="detail-element-info detail-tag-info">Identitätsdiebstahl</p>
+                            </div>
+                            <div>
+                                <p class="detail-element-info detail-tag-info">Spammails und-anrufe</p>
+                            </div>
+                            <div>
+                                <p class="detail-element-info detail-tag-info">Datenlecks</p>
+                            </div>
+                            <div>
+                                <p class="detail-element-info detail-tag-info">Zielgerichtete Werbung</p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 
@@ -606,6 +653,42 @@ export default {
     filter: brightness(0) invert(1);
 }
 
+.detail-element{
+    margin-bottom: 40px; 
+}
+
+.detail-element:last-child{
+    margin: 0;
+}
+
+.detail-element-tile{
+    margin-bottom: 10px;
+    font-weight: bold
+}
+
+.detail-element-info{
+    font-size: 14px !important;
+}
+
+.detail-flex-wrapper{
+    display: flex;
+    gap: 5em;
+    margin-top: 20px;
+}
+
+.info-tags-wrapper{
+    gap: 3em;
+}
+
+.detail-tag-info{
+    padding: 5px 10px; 
+    background-color: #d1d1ff;
+    border-radius: 5px;
+}
+
+[data-theme="dark"] .detail-tag-info{ 
+    background-color: #1A1D21; 
+}
 
 /*1680-1080*/
 @media(min-width: 1680px) {

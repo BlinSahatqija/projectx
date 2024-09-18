@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div class="profile-wrapper">
         <div class="profile-menu">
             <div class="profile-menu-item" @click="toggleProfileTab('details')"
@@ -98,6 +98,10 @@
                 <div class="change-password-btn" @click="passwordResetModal = true">
                     <p>Change Password</p>
                 </div>
+
+                <div class="change-password-btn change-signature-btn" @click="this.openSignatureModal();">
+                    <p>Change Signature</p>
+                </div>
             </div>
         </div>
 
@@ -124,13 +128,21 @@
             </button>
         </div>
     </div>
+
+    <Signature v-if="openSignature" @close="openSignature = false" />
+
 </template>
 <script> 
+import Signature from '@/components/Signature.vue';
+ 
+import {  mapActions } from 'vuex';
 export default {
     components: { 
+        Signature, 
     },
     data(){
         return{
+            openSignature: false,
             activeTab: 'details',
             countriesList: [{
                     id: 'country1',
@@ -157,6 +169,7 @@ export default {
         }
     },
     methods:{
+        ...mapActions('signature', ['closeSignatureModal', 'openSignatureModal']),
         toggleProfileTab(type){
             this.activeTab = type;
         }
@@ -248,6 +261,10 @@ export default {
         transition: 0.3s ease;
         cursor: pointer;
     }
+
+    .change-signature-btn{
+        top: 75px;
+     }
 
     .change-password-btn p{
         font-size: 14px;
@@ -694,7 +711,7 @@ export default {
     }
 
     .details{
-        padding-top: 60px;
+        padding-top: 80px;
     }
     
     .edit-user-row{ 
@@ -710,6 +727,11 @@ export default {
         padding-left: 0;
         padding-right: 0;
         text-align: center;
+    }
+
+    .change-signature-btn{
+        left: 0;
+        top: 0;
     }
 
     .save-changes-btn{

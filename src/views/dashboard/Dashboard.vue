@@ -1,5 +1,5 @@
 <template>
-<Signature v-if="hasSignature" @close="hasSignature = false" />
+<Signature v-if="showSignature" @close="handleCloseSignature" />
 <div style="display: flex;">
     <div :class="['dashboard-menu-wrapper', { 'menu-wrapper-closed': isMenuClosed }]">
         <h1 class="logo">X</h1>
@@ -100,29 +100,51 @@
         <router-view />
     </div>
 </div>
+
+<AddPayment v-if="showPaymentModal" @close="closePaymentModal"></AddPayment>
 </template>
 
 <script>
 import DarkModeToggle from '@/components/DarkModeToggle.vue';
 import Signature from '@/components/Signature.vue';
-
+import AddPayment from '@/components/AddPayment.vue';
+import { mapGetters, mapActions } from 'vuex';
 export default {
+    computed: { 
+        ...mapGetters('signature', ['showSignature']),
+        ...mapGetters('payment', ['showPaymentModal']),
+  },
     components: {
         DarkModeToggle,
-        Signature
+        Signature,
+        AddPayment
     },
     data() {
         return {
             isMenuClosed: false,
             showUserDropdown: false,
             hasSignature: false,
+
+            hasPayment: false,
         };
     },
     methods: {
+        ...mapActions('signature', ['closeSignatureModal', 'openSignatureModal']),
+        ...mapActions('payment', ['openPaymentModal', 'closePaymentModal']),
+
         toggleMenu() {
             this.isMenuClosed = !this.isMenuClosed;
         },
 
+        checkIfPayment(){
+            if(!this.hasPayment){
+                this.openPaymentModal();
+            }
+        },
+        handleCloseSignature() {
+            this.closeSignatureModal();
+            this.checkIfPayment();
+        },
 
         // handleClickOutside(event) {
         //     console.log('inside')
@@ -140,6 +162,10 @@ export default {
             this.isMenuClosed = true;
         }
 
+        if(!this.hasSignature){
+            this.openSignatureModal();
+        }
+ 
         // document.addEventListener('click', this.handleClickOutside);
     } ,
     beforeUnmount() {
