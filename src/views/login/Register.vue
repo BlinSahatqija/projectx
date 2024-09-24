@@ -41,11 +41,18 @@
 
                 
                     <div v-if="page==2"> 
+
                         <div class="input-wrapper">
-                            <label>Home Address</label>
-                            <input v-model="registerPage2.address" type="text" placeholder="Home Address">
-                            <p class="error-msg" v-if="v$.registerPage2.address.$error">{{  v$.registerPage2.address.$errors[0].$message }}</p>
+                            <label>Country</label>
+                            <select name="country" id="country" v-model="registerPage2.country" class="select-input">
+                                <option value="">Select</option>
+                                <option v-for="country in countriesList" :key="country.id" :value="country.name">
+                                    {{ country.name }}
+                                </option>
+                            </select>
+                            <p class="error-msg" v-if="v$.registerPage2.country.$error">{{  v$.registerPage2.country.$errors[0].$message }}</p>
                         </div>
+                       
 
                         <div style="display: flex; gap: 20px">
                             <div class="input-wrapper width-input-wrapper">
@@ -61,20 +68,22 @@
                             </div>
                         </div>
                         
-                        <div class="input-wrapper">
-                            <label>Country</label>
-                            <select name="country" id="country" v-model="registerPage2.country" class="select-input">
-                                <option value="">Select</option>
-                                <option v-for="country in countriesList" :key="country.id" :value="country.name">
-                                    {{ country.name }}
-                                </option>
-                            </select>
-                            <p class="error-msg" v-if="v$.registerPage2.country.$error">{{  v$.registerPage2.country.$errors[0].$message }}</p>
+                        <div style="display: flex; gap: 20px">
+                            <div class="input-wrapper width-input-wrapper">
+                                <label>Home Address</label>
+                                <input v-model="registerPage2.address" type="text" placeholder="Home Address">
+                                <p class="error-msg" v-if="v$.registerPage2.address.$error">{{  v$.registerPage2.address.$errors[0].$message }}</p>
+                            </div>
+                            <div class="input-wrapper width-input-wrapper">
+                                <label>Nr.</label>
+                                <input v-model="registerPage2.address" type="text" placeholder="Nr.">
+                                <p class="error-msg" v-if="v$.registerPage2.address.$error">{{  v$.registerPage2.address.$errors[0].$message }}</p>
+                            </div>
                         </div>
 
                         <div class="input-wrapper">
                             <label>Phone Number</label>
-                            <input v-model="registerPage2.phoneNumber" type="text" placeholder="Number">
+                            <input v-model="registerPage2.phoneNumber" type="text" placeholder="Phone Number">
                             <p class="error-msg" v-if="v$.registerPage2.phoneNumber.$error">{{  v$.registerPage2.phoneNumber.$errors[0].$message }}</p>
                         </div>
 
@@ -139,6 +148,7 @@ export default {
 
             registerPage2:{
                 address: {required}, 
+                nr: {required}, 
                 city: {required}, 
                 zip: {required}, 
                 country: {required}, 
@@ -167,6 +177,7 @@ export default {
 
             registerPage2:{
                 address: '',
+                nr:'',
                 city: '',
                 zip: '',
                 country: '',

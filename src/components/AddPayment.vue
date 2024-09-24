@@ -5,52 +5,65 @@
             <img src="../assets/icons/close-btn-rounded.svg">
         </div>
 
-        <div class="add-payment-row">
-            <h3>Add Payment</h3>
-        </div>
-        <div class="add-payment-row">
-            <div class="add-payment-element">
-                <label class="add-payment-label">Plan</label>
-                <select class="add-payment-input">
-                    <option value="" disabled>Select</option>
-                    <option value="SoloPlan">Solo Plan</option>
-                    <option value="FamilyPlan">Family Plan</option>
-                </select>
-            </div>
+        <div class="modal-title">
+            <h3>Select Plan</h3>
         </div>
 
-        <div class="add-payment-row">
-            <div class="add-payment-element">
-                <label class="add-payment-label">Period</label>
-                <select class="add-payment-input">
-                    <option value="" disabled>Select</option>
-                    <option value="1">1 Month</option>
-                    <option value="3">3 Months</option>
-                    <option value="6">6 Months</option>
-                    <option value="12">12 Months</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="add-payment-row">
-            <div class="add-payment-element">
-                <label class="add-payment-label">Start Date</label>
-                <input type="date" class="add-payment-input" placeholder="Start Date">
-            </div>
-        </div>
-
-        <div class="add-payment-row">
-            <button type="button" class="add-payment-btn">
-                Add
-            </button>
-        </div>
+        <div style="width: 500px;">
+        <swiper :navigation="true" :modules="modules" :loop="true" :spaceBetween="30" :speed="800" class="mySwiper">
+            <swiper-slide>
+                <div class="slide-wrapper">
+                    <h2 class="plan-title">Solo Plan</h2>
+                    <h1 class="plan-price">€6.99/mo</h1>
+                    
+                        <button type="button" class="add-payment-btn">
+                            Get this plan 
+                        </button>
+                     
+                </div>
+            </swiper-slide>
+            <swiper-slide  >
+                <div class="slide-wrapper">
+                    <h2 class="plan-title">Family Plan</h2>
+                    <h1 class="plan-price">€25.99/mo</h1>
+                    
+                        <button type="button" class="add-payment-btn">Get this plan 
+                        </button>
+                     
+                </div>
+            </swiper-slide>
+        </swiper>
+    </div>
+ 
     </div>
 </div>
 </template>
 
 <script>
+import {
+    Swiper,
+    SwiperSlide
+} from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+
+import {
+    Navigation
+} from 'swiper/modules';
 export default {
-    methods:{
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    data() {
+        return {
+            modules: [Navigation],
+        };
+    },
+    methods: {
         closePayment() {
             this.$emit('close');
         }
@@ -78,39 +91,11 @@ export default {
     position: relative;
 }
 
-.add-payment-row {
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    margin-bottom: 20px;
-    width: 400px;
-}
-
-.add-payment-row:last-child{
-    margin: 0;
-}
-
-.add-payment-element {
-    width: 100%;
-}
-
-.add-payment-label,
-.add-payment-input {
-    font-size: 16px;
-    display: block;
-    width: 100%;
-}
-
-.add-payment-input {
-    margin: 10px 0;
-    padding: 12px 5px;
-    border-radius: 5px;
-    border: none;
-}
-
+ 
+ 
 .close-modal-btn {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -125,13 +110,53 @@ export default {
 .close-modal-btn img {
     width: 100%;
 }
+ 
 
-.add-payment-btn{
-    width: 150px;
+* {
+    box-sizing: border-box;
+}
+
+.slide-wrapper{
+    border: 3px solid #ff3a67;
+    padding: 40px 0;
+    border-radius: 10px;
+    width: 80%;
     margin: 0 auto;
 }
 
-*{ box-sizing: border-box;}
+.plan-title, .plan-price{
+    text-align: center
+}
+
+.plan-title{
+    font-size: 24px;
+}
+
+.plan-price{
+    margin: 20px 0;
+    font-size: 34px;
+}
+
+.modal-title{
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+
+::v-deep .swiper-button-prev, 
+::v-deep .swiper-button-next {
+    color:#ff3a67 !important;
+    transform: scale(0.8);
+}
+
+
+.add-payment-btn{
+    font-size: 14px;
+    margin: 0 auto; 
+    display: block;
+    width: 150px;
+}
 
 /*1640-1080*/
 @media(min-width: 1640px) {}
@@ -140,8 +165,10 @@ export default {
 @media(min-width: 1680px) {}
 
 /* 1920-1080 */
-@media (min-width: 1920px) { 
-    .add-payment-label, .add-payment-input {
+@media (min-width: 1920px) {
+
+    .add-payment-label,
+    .add-payment-input {
         font-size: 18px;
     }
 
@@ -154,24 +181,25 @@ export default {
         height: 32px;
         top: 14px;
         right: 14px;
-    } 
+    }
 
-    .add-payment-row h3{
+    .add-payment-row h3 {
         font-size: 20px;
     }
 }
 
 /* 2304-1440 */
-@media (min-width: 2304px) { 
-    .add-payment-row h3{
+@media (min-width: 2304px) {
+    .add-payment-row h3 {
         font-size: 24px;
     }
 
-    .add-payment-row { 
+    .add-payment-row {
         width: 500px;
     }
 
-    .add-payment-label, .add-payment-input {
+    .add-payment-label,
+    .add-payment-input {
         font-size: 22px;
     }
 
@@ -180,9 +208,7 @@ export default {
         padding: 16px 8px;
     }
 
- 
-
-    .add-payment-btn { 
+    .add-payment-btn {
         padding: 16px;
         font-size: 20px;
     }
@@ -190,7 +216,6 @@ export default {
     .add-payment-btn p {
         font-size: 20px;
     }
- 
 
     .add-payment-modal {
         padding: 75px;
@@ -202,15 +227,17 @@ export default {
         top: 16px;
         right: 16px;
     }
- 
+
 }
 
 /*2560-1440*/
-@media (min-width: 2560px) {  
+@media (min-width: 2560px) {
     .add-payment-row h3 {
         font-size: 28px;
     }
-    .add-payment-label, .add-payment-input {
+
+    .add-payment-label,
+    .add-payment-input {
         font-size: 24px;
     }
 
@@ -218,7 +245,6 @@ export default {
         font-size: 22px;
     }
 
-  
     .close-modal-btn {
         width: 42px;
         height: 42px;
@@ -226,7 +252,7 @@ export default {
         right: 20px;
     }
 
-    .add-payment-btn {  
+    .add-payment-btn {
         font-size: 22px;
     }
 
@@ -236,15 +262,16 @@ export default {
 }
 
 /*2573-1206*/
-@media(min-width: 2573px) {
-}
+@media(min-width: 2573px) {}
 
 /*3200-1800*/
-@media(min-width: 3200px) {   
+@media(min-width: 3200px) {
     .add-payment-row h3 {
         font-size: 32px;
     }
-    .add-payment-label, .add-payment-input {
+
+    .add-payment-label,
+    .add-payment-input {
         font-size: 28px;
     }
 
@@ -260,8 +287,7 @@ export default {
     .add-payment-btn p {
         font-size: 26px;
     }
-  
-  
+
     .close-modal-btn {
         width: 46px;
         height: 46px;
@@ -273,16 +299,14 @@ export default {
         width: 650px;
     }
 
-    .add-payment-btn {  
+    .add-payment-btn {
         font-size: 26px;
     }
 }
 
 /*3360-1890 1695*/
-@media(min-width:3360px) {
-}
+@media(min-width:3360px) {}
 
- 
 /*my big monitor 1600 - 757 */
 @media (max-width: 1600px) {}
 
@@ -297,25 +321,27 @@ export default {
 }
 
 /*1366-768*/
-@media (max-width:1366px) { 
+@media (max-width:1366px) {
     .add-payment-modal {
         padding: 50px;
     }
 }
 
 /* 1280-800 */
-@media (max-width:1280px) { 
+@media (max-width:1280px) {
 
     .add-payment-btn p {
         font-size: 12px;
-    } 
+    }
 }
 
 /*1134x712*/
-@media(max-width:1134px) {  
-    .add-payment-label, .add-payment-input {
+@media(max-width:1134px) {
+
+    .add-payment-label,
+    .add-payment-input {
         font-size: 14px;
-    } 
+    }
 
     .add-payment-modal {
         padding: 40px;
@@ -323,16 +349,13 @@ export default {
 }
 
 /*1024-768*/
-@media (max-width:1024px) { 
-}
+@media (max-width:1024px) {}
 
 /* 962x601 */
-@media(max-width: 962px) {
-}
+@media(max-width: 962px) {}
 
 /*834-1112*/
-@media(max-width: 834px) { 
-}
+@media(max-width: 834px) {}
 
 /* 810x1080 */
 @media(max-width: 810px) {}
@@ -344,90 +367,85 @@ export default {
 @media(max-width: 778px) {}
 
 /* 768x1024 */
-@media(max-width: 768px) {
-}
+@media(max-width: 768px) {}
 
 /*712-1138*/
-@media(max-width:712px) { 
-}
+@media(max-width:712px) {}
 
 /* 601x962 */
-@media(max-width:601px) { 
-}
+@media(max-width:601px) {}
 
 /* 577-951 */
 @media(max-width:577px) {}
 
 /* 540-960 */
-@media(max-width:540px) {   
+@media(max-width:540px) {
 
-    .add-payment-btn{
-        width: 120px;  
-    } 
+    .add-payment-btn {
+        width: 120px;
+    }
 
-    .add-payment-modal {  
+    .add-payment-modal {
         padding: 35px 25px;
     }
 }
 
 /*480-800*/
-@media (max-width:480px) { 
-    .add-payment-row { 
+@media (max-width:480px) {
+    .add-payment-row {
         width: 340px;
     }
 }
 
 /*425-*/
-@media(max-width:425px) { 
-    .add-payment-label, .add-payment-input {
-        font-size: 12px;
-    } 
+@media(max-width:425px) {
 
-    .add-payment-modal {  
+    .add-payment-label,
+    .add-payment-input {
+        font-size: 12px;
+    }
+
+    .add-payment-modal {
         padding: 30px 20px;
     }
 
- 
 }
 
 /*414-736 617   */
-@media (max-width:414px) { 
-   .add-payment-btn p {
+@media (max-width:414px) {
+    .add-payment-btn p {
         font-size: 11px;
     }
 
-    .add-payment-row { 
+    .add-payment-row {
         width: 310px;
     }
 }
 
 /*390 x 844*/
-@media(max-width:390px) {
-  
-}
+@media(max-width:390px) {}
 
 /*384-640*/
-@media(max-width:384px) {
-}
+@media(max-width:384px) {}
 
 /*375*/
-@media(max-width:375px) { 
-}
+@media(max-width:375px) {}
 
 /*360x640*/
 @media(max-width:360px) {
-    .add-payment-btn{
-        width: 100px; 
+    .add-payment-btn {
+        width: 100px;
     }
-    .add-payment-row  {
-        width: 290px; 
+
+    .add-payment-row {
+        width: 290px;
     }
 }
 
 /*320x568*/
 @media(max-width:320px) {
-    .add-payment-row  {
-        width: 250px; 
+    .add-payment-row {
+        width: 250px;
     }
 }
 </style>

@@ -81,6 +81,52 @@
                         
                         <p class="detail-element-info">Sie wurden zur Sperrliste des Datenbrokers hinzugefügt. Dies bedeutet, dass dieser keine Informationen über Sie mehr sammelt, weitergibt oder speichert.</p>
                     </div> 
+
+                    <div class="detail-element">
+                        <p class="detail-element-tile">Status</p>
+
+                        <div class="request-status-wrapper">
+                            <!-- <svg height="10" width="100%" style="position: absolute; top: 50%; left: 0; z-index: 0;">
+                                <defs>
+                                    <linearGradient :id="'statusGradient-'" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" :stop-color="detail.status.id >= 1 ? 'orange' : 'grey'" />
+                <stop offset="33%" :stop-color="detail.status.id >= 2 ? '#466AF7' : 'grey'" />
+                <stop offset="66%" :stop-color="detail.status.id >= 3 ? '#FF003C' : 'grey'" />
+                <stop offset="100%" :stop-color="detail.status.id >= 4 ? '#65B12F' : 'grey'" />
+                                    </linearGradient>
+                                </defs>
+                                <line x1="0" y1="5" x2="100%" y2="5" :stroke="'url(#statusGradient-'" stroke-width="4" />
+                            </svg> -->
+
+                            <svg height="10" width="100%" style="position: absolute; top: 45%; left: 0; z-index: 0;">
+        <line x1="0" y1="5" x2="100%" y2="5" stroke="grey" stroke-width="4" />
+    </svg>
+
+    <!-- The colored progress line -->
+    <!-- <svg height="10" width="100%" style="position: absolute; top: 45%; left: 0; z-index: 0;">
+        <line x1="0" y1="5" :x2="`${(detail.status.id / 4) * 100}%`" y2="5" :stroke="progressColor(detail.status.id)" stroke-width="4" />
+    </svg> -->
+
+    <svg height="10" width="100%" style="position: absolute; top: 45%; left: 0; z-index: 0;">
+        <line x1="0" y1="5" :x2="`${(detail.status.id / 4) * 100}%`" y2="5" stroke="green" stroke-width="4" />
+    </svg>
+
+                            <p :class="['request-status', detail.status.id >= 1 ? 'completed-status' : 'grey-status']">
+                                Requested
+                            </p>
+                            <p :class="['request-status', detail.status.id >= 2 ? 'completed-status' : 'grey-status']">
+                                Answer
+                            </p>
+                            <p :class="['request-status', detail.status.id >= 3 ? 'completed-status' : 'grey-status']">
+                                Apply Delete
+                            </p>
+                            <p :class="['request-status', detail.status.id >= 4 ? 'completed-status' : 'grey-status']">
+                                Completed
+                            </p>
+                        </div>
+
+                    </div>
+
                      
                     <div class="detail-element"> 
                         <p class="detail-element-tile">Allgemeine Statistiken</p>
@@ -149,10 +195,10 @@ export default {
                         id: 3,
                         name: 'High'
                     },
-                    requests: 1,
+                    requests: 0,
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
-                        id: 1,
+                        id: 4,
                         type: 'Completed'
                     }
                 },
@@ -174,7 +220,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -191,11 +237,11 @@ export default {
                         id: 1,
                         name: 'Medium'
                     },
-                    requests: 0,
+                    requests: 1,
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 3,
-                        type: 'Surpressed'
+                        type: 'Apply Delete'
                     }
                 },
                 {
@@ -216,7 +262,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 1,
-                        type: 'Completed'
+                        type: 'Requested'
                     }
                 },
                 {
@@ -237,7 +283,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -258,7 +304,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -279,7 +325,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -300,7 +346,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -321,7 +367,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -342,7 +388,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -363,7 +409,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
                 {
@@ -384,7 +430,7 @@ export default {
                     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo temporibus rerum officiis, veritatis quisquam eveniet dolores iure dicta numquam est fugit quaerat quae quasi eligendi, exercitationem corporis neque quos!',
                     status: {
                         id: 2,
-                        type: 'In Progress'
+                        type: 'Answer'
                     }
                 },
             ],
@@ -393,6 +439,21 @@ export default {
         }
     },
     methods: {
+        progressColor(status) {
+            switch (status) {
+                case 1:
+                return 'orange';
+                case 2:
+                return '#466AF7';
+                case 3:
+                return '#FF003C';
+                case 4:
+                return '#65B12F';
+                default:
+                return 'grey';
+            }
+        },
+
         toggleDropdown(index) {
             // Initialize the visibility array if it's not already initialized
             if (!this.dropdownVisible.length) {
@@ -465,12 +526,16 @@ export default {
 
 .status-type-1{ 
 
-  background-color: #466AF7;
-}
-.status-type-2{ 
     background-color: orange;
 }
+.status-type-2{ 
+    background-color: #466AF7;
+}
 .status-type-3{ 
+  background-color: #FF003C;
+}
+
+.status-type-4{ 
   background-color: #65B12F;
 }
 
@@ -689,6 +754,59 @@ export default {
 [data-theme="dark"] .detail-tag-info{ 
     background-color: #1A1D21; 
 }
+
+.request-status-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 0;
+    position: relative;
+}
+
+.request-status{
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 120px;
+    text-align: center;
+    font-size: 14px !important; 
+    z-index: 3;
+    background-color: #212529 !important;
+}
+
+.requested-status{
+    color: orange;
+}
+
+.answer-status{
+    color: #466AF7;;
+}
+
+.apply-delete-status{
+    color: #FF003C;
+}
+
+.completed-status{
+    color: #65B12F;
+}
+.grey-status {
+    color: grey;
+    border-color: grey;
+}
+
+
+/* .request-status-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;  
+    left: 0;
+    right: 0;
+    height: 4px;  
+    background: linear-gradient(to right, orange, #466AF7, #FF003C, #65B12F);
+    z-index: 2;  
+} */
+
 
 /*1680-1080*/
 @media(min-width: 1680px) {

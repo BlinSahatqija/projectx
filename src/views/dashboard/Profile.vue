@@ -49,8 +49,13 @@
 
                 <div class="edit-user-row">
                     <div class="edit-user-element">
-                        <label class="edit-user-label">Home Address</label>
-                        <input type="text" class="edit-user-input" placeholder="Home Address">
+                        <label class="edit-user-label">Country</label> 
+                        <select class="edit-user-input">
+                            <option value="" disabled>Select</option>
+                            <option v-for="country in countriesList" :key="country.id" :value="country.name">
+                                {{ country.name }}
+                            </option>
+                        </select>
                     </div>
 
                     <div class="edit-user-element">
@@ -64,23 +69,24 @@
                         <label class="edit-user-label">ZIP / Postal Code</label>
                         <input type="text" class="edit-user-input" placeholder="ZIP / Postal Code">
                     </div>
-                    
-                    <div class="edit-user-element">
-                        <label class="edit-user-label">Country</label> 
-                        <select class="edit-user-input">
-                            <option value="" disabled>Select</option>
-                            <option v-for="country in countriesList" :key="country.id" :value="country.name">
-                                {{ country.name }}
-                            </option>
-                        </select>
+                    <div  style="display: flex; justify-content: space-between;" class="edit-user-element">
+                        <div style="width: 48%;" >
+                            <label class="edit-user-label">Home Address</label>
+                            <input type="text" class="edit-user-input" placeholder="Home Address">
+                        </div>
+                        <div style="width: 48%;" >
+                            <label class="edit-user-label">Nr.</label>
+                            <input type="text" class="edit-user-input" placeholder="Nr.">
+                        </div>
                     </div>
+                    
                 </div>
 
 
                 <div class="edit-user-row">
                     <div class="edit-user-element">
-                        <label class="edit-user-label">Number</label>
-                        <input type="text" class="edit-user-input last-element" placeholder="Number">
+                        <label class="edit-user-label">Phone Number</label>
+                        <input type="text" class="edit-user-input last-element" placeholder="Phone Number">
                     </div>
 
                     <div class="edit-user-element ">

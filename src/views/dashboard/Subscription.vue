@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="subscription-info">
-                        <p class="subscription-expires-title">Expires at</p>
-                        <p class="subscription-expires-date">Sep 18, 2024</p>
+                        <p class="subscription-start-title">Started at</p>
+                        <p class="subscription-start-date">Sep 18, 2024</p>
                     </div>
                 </div>
 
@@ -195,13 +195,13 @@ export default {
     }
 
     .subscription-plan-type,
-    .subscription-expires-title{
+    .subscription-start-title{
         font-size: 18px;
         margin-bottom: 5px;
     }
 
     .subscription-plan-price,
-    .subscription-expires-date{
+    .subscription-start-date{
         font-size: 28px;
         font-weight: 600;
     }
@@ -250,12 +250,12 @@ export default {
         font-size: 42px;
     }
 
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 24px;
         margin-bottom: 10px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 34px; 
     }
 
@@ -316,12 +316,12 @@ export default {
         padding: 35px;
     }
 
-    .subscription-plan-type , .subscription-expires-title {
+    .subscription-plan-type , .subscription-start-title {
         font-size: 34px;
         margin-bottom: 15px;
     }
 
-    .subscription-plan-price , .subscription-expires-date {
+    .subscription-plan-price , .subscription-start-date {
         font-size: 42px;
     }
 
@@ -391,12 +391,12 @@ export default {
         padding: 45px;
     }
 
-    .subscription-plan-type , .subscription-expires-title {
+    .subscription-plan-type , .subscription-start-title {
         font-size: 44px;
         margin-bottom: 22px;
     }
 
-    .subscription-plan-price , .subscription-expires-date {
+    .subscription-plan-price , .subscription-start-date {
         font-size: 52px;
     }
 
@@ -454,12 +454,12 @@ export default {
         padding: 55px;
     }
 
-    .subscription-plan-type , .subscription-expires-title {
+    .subscription-plan-type , .subscription-start-title {
         font-size: 54px;
         margin-bottom: 28px;
     }
 
-    .subscription-plan-price , .subscription-expires-date {
+    .subscription-plan-price , .subscription-start-date {
         font-size: 60px;
     }
 
@@ -491,12 +491,12 @@ export default {
         font-size: 38px;
     }
 
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 18px;
         margin-bottom: 10px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 28px; 
     }
 
@@ -521,7 +521,7 @@ export default {
         font-size: 34px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 26px;
     }
 }
@@ -546,7 +546,7 @@ export default {
         font-size: 30px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 24px;
     }
 }
@@ -579,7 +579,7 @@ export default {
         font-size: 28px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 22px;
     }
 
@@ -587,7 +587,7 @@ export default {
         font-size: 16px;
     }
 
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 16px;
     }
 
@@ -647,11 +647,11 @@ export default {
         align-items: flex-start;
     }
 
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 18px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 26px;
     }
 
@@ -749,11 +749,11 @@ export default {
         font-size: 12px; 
     }
 
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 16px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 24px;
     }
 }
@@ -771,7 +771,7 @@ export default {
         font-size: 26px;
     }
 
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 22px;
     }
 
@@ -815,10 +815,10 @@ export default {
     .subscription-about-title  {
         font-size: 22px;
     }
-    .subscription-plan-price , .subscription-expires-date  {
+    .subscription-plan-price , .subscription-start-date  {
         font-size: 18px;
     }
-    .subscription-plan-type , .subscription-expires-title  {
+    .subscription-plan-type , .subscription-start-title  {
         font-size: 12px;
     }
     .subscription-status  { 
