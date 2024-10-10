@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="dashboard-content-wrapper">
+    <div class="dashboard-content-wrapper"> 
         <header>
             <div :class="['icon-wrapper hamburger-icon-wrapper', { 'hamburger-icon-wrapper-closed': isMenuClosed }]">
                 <div class="hamburger-icon icon" @click="toggleMenu()">
@@ -71,15 +71,15 @@
             </div>
             <div class="dashboard-header-links">
                 <DarkModeToggle />
-                <div class="user-menu-dropdown-wrapper">
-                    <div class="icon-wrapper" @click="showUserDropdown = !showUserDropdown">
+                <div class="user-menu-dropdown-wrapper" ref="userMenu">
+                    <div class="icon-wrapper" @click="toggleDropdown()">
                         <div class="user-icon icon">
                             <img src="../../assets/icons/user-icon.svg">
                         </div>
                     </div>
 
-                    <div v-if="showUserDropdown"  ref="dropdown">
-                        <div class="user-menu-dropdown">
+                    
+                        <div class="user-menu-dropdown"  v-if="showUserDropdown" >
                             <router-link to="/dashboard/profile" class="user-menu-item"  @click="showUserDropdown = false">
                                 <div class="user-menu-item-icon">
                                     <img src="../../assets/icons/user-icon.svg">
@@ -93,7 +93,7 @@
                                 <p>Log Out</p>
                             </router-link> 
                         </div>
-                    </div>
+                    
                 </div> 
             </div>
         </header>
@@ -128,9 +128,17 @@ export default {
             hasPayment: false,
         };
     },
+    watch: {
+ 
+  },
     methods: {
         ...mapActions('signature', ['closeSignatureModal', 'openSignatureModal']),
         ...mapActions('payment', ['openPaymentModal', 'closePaymentModal']),
+
+
+        toggleDropdown(){  
+            this.showUserDropdown = !this.showUserDropdown; 
+        },
 
         toggleMenu() {
             this.isMenuClosed = !this.isMenuClosed;
@@ -146,30 +154,29 @@ export default {
             this.checkIfPayment();
         },
 
-        // handleClickOutside(event) {
-        //     console.log('inside')
-        //     console.log(this.showUserDropdown)
-        //     if (!this.$refs.dropdown.contains(event.target)) {
-        //         this.showUserDropdown = false;
-        //     }else{
-        //         this.showUserDropdown = true;
-        //     }
-        //     console.log(this.showUserDropdown)
-        // },
+        handleClickOutside(event) {
+      // Check if the click happened outside the user menu dropdown
+      if (this.showUserDropdown && !this.$refs.userMenu.contains(event.target)) {
+        this.showUserDropdown = false;
+      }
+    },
+
+ 
     },
     mounted() {
         if (window.innerWidth < 770) {
             this.isMenuClosed = true;
         }
 
-        if(!this.hasSignature){
-            this.openSignatureModal();
-        }
+        // if(!this.hasSignature){
+        //     this.openSignatureModal();
+        // }
  
-        // document.addEventListener('click', this.handleClickOutside);
+        document.addEventListener('click', this.handleClickOutside);
+ 
     } ,
-    beforeUnmount() {
-        // document.removeEventListener('click', this.handleClickOutside);
+    beforeUnmount() { 
+        document.removeEventListener('click', this.handleClickOutside);
     },
 };
 </script>

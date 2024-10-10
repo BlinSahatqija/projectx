@@ -58,7 +58,7 @@
                     </div>
                     <div class="action-body" @click="toggleDropdown(index)">
                         <img src="../../assets/icons/three-dots-vertical.svg">
-                        <div v-if="dropdownVisible[index]" class="dropdown-menu">
+                        <div v-if="dropdownVisible[index]" class="dropdown-menu" ref="dropdownMenu">
                             <div @click="editDetail(detail)" class="dropdown-button dropdown-button-edit">
                                 <div class="dropdown-icon edit-icon">
                                     <img src="../../assets/icons/edit-icon.svg">
@@ -455,24 +455,33 @@ export default {
         },
 
         toggleDropdown(index) {
-            // Initialize the visibility array if it's not already initialized
             if (!this.dropdownVisible.length) {
                 this.dropdownVisible = new Array(this.details.length).fill(false);
             }
-
-            // Toggle the specific dropdown
+ 
             this.dropdownVisible = this.dropdownVisible.map((visible, i) =>
                 i === index ? !visible : false
             );
+ 
+            if (this.dropdownVisible[index]) {
+                document.addEventListener('click', this.handleClickOutside);
+            } else {
+                document.removeEventListener('click', this.handleClickOutside);
+            }
         },
 
-        toggleInfo(index) {
-            // Initialize the visibility array if it's not already initialized
+        handleClickOutside(event) {
+            if (!event.target.closest('.action-body')) { 
+                this.dropdownVisible = this.dropdownVisible.map(() => false);
+                document.removeEventListener('click', this.handleClickOutside);  
+            }
+        },
+
+        toggleInfo(index) { 
             if (!this.infoVisible.length) {
                 this.infoVisible = new Array(this.details.length).fill(false);
             }
-
-            // Toggle the specific info visibility
+ 
             this.infoVisible = this.infoVisible.map((visible, i) =>
                 i === index ? !visible : visible
             );
@@ -486,6 +495,9 @@ export default {
             // Handle delete logic here
             console.log("Delete detail with id:", id);
         },
+    },
+    beforeUnmount() { 
+        document.removeEventListener('click', this.handleClickOutside);
     },
 };
 </script>
